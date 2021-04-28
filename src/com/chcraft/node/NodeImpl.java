@@ -20,7 +20,7 @@ public class NodeImpl implements Node {
 		//set uid
 		StringBuilder sb = new StringBuilder("NODE_UID_");
 		sb.append((int)(Math.random() * 10));
-		while(!uidList.contains(sb.toString())) {
+		while(uidList.contains(sb.toString())) {
 			sb.append((int)(Math.random() * 10));
 		}
 		uid = sb.toString();

@@ -4,10 +4,7 @@ import com.chcraft.router.VirtualRouter;
 
 //dhcp서버 안쓰고 공유기가 dhcp서버 역할을 하게 구현함
 public interface Node {
-	public default void run(VirtualRouter router) {
-		while(!dhcpConnect(router)) {
-		}
-
+	public default void run() {
 		System.out.println(getUid() + "'s Ip address : " + getIpAddress());
 		System.out.println(getUid() + "'s Gateway : " + getGateway().getIpAddress());
 

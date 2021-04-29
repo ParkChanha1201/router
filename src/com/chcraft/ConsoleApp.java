@@ -36,7 +36,7 @@ public class ConsoleApp {
 			}
 
 			@Override
-			public void response(Request requset) {
+			public void responseToRequest(Request requset) {
 				// TODO Auto-generated method stub
 
 			}

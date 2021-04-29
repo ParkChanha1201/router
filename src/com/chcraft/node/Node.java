@@ -30,5 +30,5 @@ public interface Node {
 
 	public Response sendRequest(Request request);
 	public Response sendRequest(int sourcePort, String destinationAddress, int destinationPort, String message);
-	public void response(Request requset);
+	public void responseToRequest(Request requset);
 }

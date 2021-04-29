@@ -1,10 +1,10 @@
 package com.chcraft;
 
-import com.chcraft.node.Node;
-import com.chcraft.node.NodeImpl;
-import com.chcraft.node.Request;
-import com.chcraft.node.Response;
-import com.chcraft.router.VirtualRouter;
+import com.chcraft.shapelessnet.message.Request;
+import com.chcraft.shapelessnet.message.Response;
+import com.chcraft.shapelessnet.node.Node;
+import com.chcraft.shapelessnet.node.NodeImpl;
+import com.chcraft.shapelessnet.router.VirtualRouter;
 
 public class ConsoleApp {
 	public static void main(String[] args) {

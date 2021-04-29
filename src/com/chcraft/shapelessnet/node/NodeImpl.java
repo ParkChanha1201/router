@@ -1,9 +1,11 @@
-package com.chcraft.node;
+package com.chcraft.shapelessnet.node;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.chcraft.router.VirtualRouter;
+import com.chcraft.shapelessnet.message.Request;
+import com.chcraft.shapelessnet.message.Response;
+import com.chcraft.shapelessnet.router.VirtualRouter;
 
 public class NodeImpl implements Node {
 	private static List<String> uidList;

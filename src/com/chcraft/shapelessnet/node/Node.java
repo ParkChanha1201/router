@@ -1,6 +1,8 @@
-package com.chcraft.node;
+package com.chcraft.shapelessnet.node;
 
-import com.chcraft.router.VirtualRouter;
+import com.chcraft.shapelessnet.message.Request;
+import com.chcraft.shapelessnet.message.Response;
+import com.chcraft.shapelessnet.router.VirtualRouter;
 
 //dhcp서버 안쓰고 공유기가 dhcp서버 역할을 하게 구현함
 public interface Node {

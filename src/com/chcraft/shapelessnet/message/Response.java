@@ -1,4 +1,4 @@
-package com.chcraft.node;
+package com.chcraft.shapelessnet.message;
 
 public class Response {
 	private String sourceAddress;

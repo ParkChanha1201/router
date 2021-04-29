@@ -1,8 +1,8 @@
-package com.chcraft.router;
+package com.chcraft.shapelessnet.router;
 
-import com.chcraft.node.Node;
-import com.chcraft.node.Request;
-import com.chcraft.node.Response;
+import com.chcraft.shapelessnet.message.Request;
+import com.chcraft.shapelessnet.message.Response;
+import com.chcraft.shapelessnet.node.Node;
 
 public class RouterImpl implements VirtualRouter {
 

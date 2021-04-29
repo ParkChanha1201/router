@@ -1,6 +1,6 @@
-package com.chcraft.router;
+package com.chcraft.shapelessnet.router;
 
-import com.chcraft.node.Node;
+import com.chcraft.shapelessnet.node.Node;
 
 /*
  * 공유기가 할 일

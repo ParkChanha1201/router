@@ -10,9 +10,8 @@ public class RequestQueue {
 		//다른 노드가 요청을 보내서 request queue에 채워넣음
 		requestQueue.add(request);
 		//요청이 들어왔으니까 처리하라고 wait인 녀석들 호출함
+		//1개만 처리하고 매번 다시 잠들면 안좋을거 같으니까 size가 좀 더 커지면 깨울까?
 		notifyAll();
-
-
 	}
 
 	public synchronized Response processRequest() {
@@ -23,7 +22,6 @@ public class RequestQueue {
 			} catch (InterruptedException e) {
 			}
 		}
-
 		//요청이 들어왔으면 요청에 알맞는 응답을 생성해서 리턴함.
 
 		return null;

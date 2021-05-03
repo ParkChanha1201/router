@@ -8,7 +8,7 @@ import com.chcraft.shapelessnet.message.ResponseQueue;
 public class Computer implements Node {
 	private String name;
 	private String ipAddress;
-	private List<Node> directConnectedNodes;
+	private List<Node> connectedNodes;
 	private RequestQueue requestQueue;
 	private ResponseQueue responseQueue;
 
@@ -22,17 +22,33 @@ public class Computer implements Node {
 		System.out.println(name + " is powered on.");
 		System.out.println(name + "'s ip address is " + ipAddress);
 		while(true) {
-			//Request 생산 thread
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 			}
 
-			if(directConnectedNodes.size() == 0) {
+			if(connectedNodes.size() == 0) {
 				System.out.println("there is no connected node.");
 				continue;
 			}
 
+
+			//각각 쓰레드에서 처리하기
+			/* CREATE REQUEST
+			 * for(Node node : connectedNodes){
+			 * 		node.getRequestQueue().add(Request);
+			 * }
+			 * */
+
+			//각각 쓰레드에서 처리하기
+			/* CREATE RESPONSE
+			 * for(Request request : requestQueue){
+			 * 		node = connectedNodes.find(request.source);
+			 * 		node.getResponseQueue().add(response);
+			 * }
+			 * */
+
+			//Request 생산 thread
 			System.out.println(name + " create request");
 			//Response 생산 thread
 			System.out.println(name + " create response");
@@ -60,8 +76,8 @@ public class Computer implements Node {
 	}
 
 	@Override
-	public List<Node> getDirectConnectedNodes() {
-		return directConnectedNodes;
+	public List<Node> getConnectedNodes() {
+		return connectedNodes;
 	}
 
 }

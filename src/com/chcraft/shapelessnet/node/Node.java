@@ -10,5 +10,5 @@ public interface Node extends Runnable{
 	public String getIpAddress();
 	public RequestQueue getRequestQueue();
 	public ResponseQueue getResponseQueue();
-	public List<Node> getDirectConnectedNodes();
+	public List<Node> getConnectedNodes();
 }

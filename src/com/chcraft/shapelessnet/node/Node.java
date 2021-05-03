@@ -1,36 +1,14 @@
 package com.chcraft.shapelessnet.node;
 
-import com.chcraft.shapelessnet.message.Request;
-import com.chcraft.shapelessnet.message.Response;
-import com.chcraft.shapelessnet.router.VirtualRouter;
+import java.util.List;
 
-//dhcp서버 안쓰고 공유기가 dhcp서버 역할을 하게 구현함
-public interface Node {
-	public default void run() {
-		System.out.println(getUid() + "'s Ip address : " + getIpAddress());
-		System.out.println(getUid() + "'s Gateway : " + getGateway().getIpAddress());
+import com.chcraft.shapelessnet.message.RequestQueue;
+import com.chcraft.shapelessnet.message.ResponseQueue;
 
-		while(true) {
-			try {
-				Thread.sleep(1000);
-				System.out.println("Make request and send request");
-
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	public String getUid();
+public interface Node extends Runnable{
+	public String getName();
 	public String getIpAddress();
-
-	public boolean dhcpConnect(VirtualRouter router);
-	public boolean staticConnect(VirtualRouter router, String ipAddress);
-
-	public Node getGateway();
-	public void setGateway(VirtualRouter router);
-
-	public Response sendRequest(Request request);
-	public Response sendRequest(int sourcePort, String destinationAddress, int destinationPort, String message);
-	public void responseToRequest(Request requset);
+	public RequestQueue getRequestQueue();
+	public ResponseQueue getResponseQueue();
+	public List<Node> getDirectConnectedNodes();
 }

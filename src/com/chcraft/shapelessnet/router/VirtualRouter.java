@@ -10,14 +10,4 @@ import com.chcraft.shapelessnet.node.Node;
  */
 
 public interface VirtualRouter extends Node {
-	/***
-	 * @param node want to connect this router
-	 * @return node's ip address
-	 */
-	public String addNodeByDHCP(Node node);
-	/***
-	 * @param node want to connect this router
-	 * @return node's ip address
-	 */
-	public String addNodeByStatic(Node node, String ipAddress);
 }

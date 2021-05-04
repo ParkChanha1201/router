@@ -26,7 +26,11 @@ public class ResponseQueue {
 			}
 		}
 
+		System.out.println(Thread.currentThread().getName() + "에 response 도착했다.");
+		Response response = responseQueue.poll();
+
 		//response 처리
-		System.out.println(Thread.currentThread().getName() + "가 response 처리한다.");
+		System.out.println(response.getMessage());
+		System.out.println();
 	}
 }

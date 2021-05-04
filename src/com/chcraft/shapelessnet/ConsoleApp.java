@@ -11,8 +11,7 @@ public class ConsoleApp {
 		Computer com1 = (Computer)NodeFactory.createAndRun("com1", "com1.ipv4.1.1", NodeType.COMPUTER);
 		Computer com2 = (Computer)NodeFactory.createAndRun("com2", "com2.ipv4.1.1", NodeType.COMPUTER);
 
-
-
-
+		com1.connectTo(com2);
+		com2.connectTo(com1);
 	}
 }

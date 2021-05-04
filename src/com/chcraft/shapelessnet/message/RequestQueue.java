@@ -23,7 +23,17 @@ public class RequestQueue {
 			}
 		}
 		//요청이 들어왔으면 요청에 알맞는 응답을 생성해서 리턴함.
+		Request request = requestQueue.poll();
 
-		return null;
+		System.out.println("request :" + request.getMessage());
+		System.out.println();
+
+		Response response = Response.builder()
+									.destinationAddress(request.getSourceAddress())
+									.sourceAddress(request.getDestinationAddress())
+									.message("response from " + request.getDestinationAddress() + (int)(Math.random() * 10))
+									.build();
+
+		return response;
 	}
 }
